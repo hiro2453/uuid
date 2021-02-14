@@ -3,23 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-
+  <script type="text/javascript" src="uuid/uuid.js"></script>
   <script type="text/javascript">
     window.onload = function onLoad() {
-      var uuid = (function () {
-        var S4 = function () {
-          return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
-        }
-        return (S4() + S4() + "-" + S4() + "-" + S4() + "-" + S4() + "-" + S4() + S4() + S4());
-      })();
-
+      var id = UUID.generate()
       target = document.getElementById("output");
-      target.innerHTML = uuid;
+      target.innerHTML = id;
     }
-  </script>
-
-</head>
+  </script></head>
 <body>
-  <p></p>
+  <p id="output"></p>
 </body>
 </html>
